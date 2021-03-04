@@ -1,7 +1,6 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Youtube tutorial found at: https://www.youtube.com/watch?v=IimeDiy4wH8&list=PLCC34OHNcOtrk3BDsfZwf4GattdLoKCOF&index=5
 
 Things you may want to cover:
 

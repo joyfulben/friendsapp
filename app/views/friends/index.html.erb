@@ -1,28 +1,33 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Friends</h1>
+<h1>List O' Friends!</h1>
 
-<table>
+<table class='table table-hover'>
   <thead>
     <tr>
-      <th>First name</th>
-      <th>Last name</th>
-      <th>Phone</th>
-      <th>Email</th>
-      <th colspan="3"></th>
+      <th scope="col">First name</th>
+      <th scope="col">Last name</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Email</th>
+      <th scope="col" colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @friends.each do |friend| %>
-      <tr>
-        <td><%= friend.first_name %></td>
-        <td><%= friend.last_name %></td>
-        <td><%= friend.phone %></td>
-        <td><%= friend.email %></td>
-        <td><%= link_to 'Show', friend %></td>
-        <td><%= link_to 'Edit', edit_friend_path(friend) %></td>
-        <td><%= link_to 'Destroy', friend, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <% @friends.each.with_index do |friend, i| %>
+
+      <% if i.even? %>
+        <tr class="table-info">
+      <% else %>
+        <tr class="table-secondary">
+      <% end %>
+        <td scope="col"><%= friend.first_name %></td>
+        <td scope="col"><%= friend.last_name %></td>
+        <td scope="col"><%= friend.phone %></td>
+        <td scope="col" colspan="3"><%= friend.email %></td>
+        <td scope="col" colspan="1"><%= link_to 'Show', friend %></td>
+        <td scope="col" colspan="1"><%= link_to 'Edit', edit_friend_path(friend) %></td>
+        <td scope="col" colspan="1"><%= link_to 'Destroy', friend, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
